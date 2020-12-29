@@ -2,11 +2,11 @@
   <img class="card-img-top" src="https://source.unsplash.com/1080x720/?{{ item.image }}" alt="Card image cap">
   <div class="card-body">
     <h5 class="card-title">{{ item.id }} {{ item.title | uppercase }}</h5>
-    <p class="card-text">{{ item.description | summerize: 8 }}</p>
+    <p class="card-text">{{ item.description | summerize: 50 }}</p>
     <hr>
     <span class="float-left btn btn-sm btn-outline-primary disabled"> {{ item.price | separator: '.' }} fcfa </span>
     <span class="btn btn-sm text-center disabled">{{ item.createAt | timeLeft }}</span>
-    <a routerLink="/biens/{{ item.id }}" class="btn btn-sm btn-primary float-right">Réserver</a>
+    <a routerLink="/biens/{{ item.id }}" class="btn btn-sm btn-primary float-right">Détails</a>
   </div>
 </div>
 

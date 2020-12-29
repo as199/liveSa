@@ -7,20 +7,18 @@ export class TimeLeftPipe implements PipeTransform {
 
   // @ts-ignore
   transform(value: Date): string {
-    const currentTime = new Date();
+    const currentTime =new Date();
     const diff = currentTime.getTime() - value.getTime();
-    const year = Math.floor(diff / 1000 / 60 / 60 / 24 / 365);
-    if (year > 0) { return year + ' year ago'; }
-    const month = Math.floor((diff / 1000 / 60 / 60 / 24 ) % 12);
-    if (month > 0) { return month + ' months ago'; }
-    const day = Math.floor(diff / 1000 / 60 / 60 / 24);
-    if (day > 0) { return day + ' day ago'; }
-    const hours = Math.floor((diff / 1000 / 60 / 60) % 24);
-    if (hours > 0) { return hours + ' hours left'; }
-    const minutes = Math.floor((diff / 1000 / 60 ) % 60);
-    if (minutes > 0) { return minutes + ' minutes left'; }
-    const seconds = Math.floor((diff / 1000 ) % 60);
-    if (seconds > 0) { return seconds + ' seconds left'; }
-    return '1s';
+    const y = diff/1000/60/60/24/365;
+    if(y >0) return Math.floor(y)+' ans';
+    const d = diff/1000/60/60/24;
+    if(d >0) return Math.floor(d)+' jours';
+    const h = (diff/1000/60/60)% 24;
+    if(h >0) return Math.floor(h)+' h';
+    const m = (diff/1000/60)% 60;
+    if(m >0) return Math.floor (m)+' minutes';
+    const s = (diff/1000)% 60;
+    if(s > 0) return Math.floor(s)+' seconde';
+    return '1 s'
   }
 }

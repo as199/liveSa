@@ -7,7 +7,7 @@
     <div class="card">
       <img
         class="card-img-top"
-        src="https://source.unsplash.com/1080x720/?product"
+        src="{{donnees.image}}"
         alt="Annonce 1"
       />
       <div class="card-body">
@@ -18,7 +18,7 @@
         <hr />
         <span class="float-left btn btn-sm btn-outline-danger disabled">{{donnees.price |separator :'.'}}</span>
         <span class="float-left btn btn-sm disabled">Ref: 67dh6dgo</span>
-        <span class="float-left btn btn-sm disabled">{{donnees.createdAt |timeLeft}}</span>
+        <span class="float-left btn btn-sm disabled">{{donnees.createAt |timeLeft}}</span>
         <a href="#" class="btn btn-sm btn-primary float-right">Réserver</a
         >
       </div>
@@ -45,5 +45,12 @@
                 </span>
       </div>
     </div>
+    <hr>
+    <h4>les biens similaires</h4>
+    <ul>
+      <li><a [routerLink]="['/biens',1]">Bien sim 1</a></li>
+      <li><a [routerLink]="['/biens',2]">Bien sim 2</a></li>
+      <li><a [routerLink]="['/biens',3]">Bien sim 3</a></li>
+    </ul>
   </div>
 </div>

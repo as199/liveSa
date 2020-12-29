@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
-import { AppRoutingModule } from './app-routing.module';
+
 import { AppComponent } from './app.component';
 import { BienComponent } from './bien/bien.component';
 import { ListBienComponent } from './bien/list-bien/list-bien.component';
@@ -16,6 +16,11 @@ import { TimeLeftPipe } from './pipes/time-left.pipe';
 import { SummerizePipe } from './pipes/summerize.pipe';
 import { FilterPipe } from './pipes/filter.pipe';
 import {FormsModule} from '@angular/forms';
+import { ReservationComponent } from './bien/reservation/reservation.component';
+import { DetailsReservationComponent } from './bien/reservation/details-reservation/details-reservation.component';
+import { EditeReservationComponent } from './bien/reservation/edite-reservation/edite-reservation.component';
+import {AppRoutingModule} from "./app-routing/app-routing.module";
+import { Page404Component } from './page404/page404.component';
 
 @NgModule({
   declarations: [
@@ -31,12 +36,16 @@ import {FormsModule} from '@angular/forms';
     SeparatorPipe,
     TimeLeftPipe,
     SummerizePipe,
-    FilterPipe
+    FilterPipe,
+    ReservationComponent,
+    DetailsReservationComponent,
+    EditeReservationComponent,
+    Page404Component
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
-    FormsModule
+    FormsModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
