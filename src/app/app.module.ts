@@ -15,12 +15,16 @@ import { SeparatorPipe } from './pipes/separator.pipe';
 import { TimeLeftPipe } from './pipes/time-left.pipe';
 import { SummerizePipe } from './pipes/summerize.pipe';
 import { FilterPipe } from './pipes/filter.pipe';
-import {FormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { ReservationComponent } from './bien/reservation/reservation.component';
 import { DetailsReservationComponent } from './bien/reservation/details-reservation/details-reservation.component';
 import { EditeReservationComponent } from './bien/reservation/edite-reservation/edite-reservation.component';
 import {AppRoutingModule} from "./app-routing/app-routing.module";
 import { Page404Component } from './page404/page404.component';
+import { LoginComponent } from './login/login.component';
+import { ErrorsComponent } from './errors/errors.component';
+import { RegisterComponent } from './login/register/register.component';
+import { TestsdComponent } from './testsd/testsd.component';
 
 @NgModule({
   declarations: [
@@ -40,12 +44,17 @@ import { Page404Component } from './page404/page404.component';
     ReservationComponent,
     DetailsReservationComponent,
     EditeReservationComponent,
-    Page404Component
+    Page404Component,
+    LoginComponent,
+    ErrorsComponent,
+    RegisterComponent,
+    TestsdComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

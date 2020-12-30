@@ -1,0 +1,75 @@
+<!--<div class="wrapper fadeInDown">-->
+<!--  <div id="formContent">-->
+<!--    &lt;!&ndash; Tabs Titles &ndash;&gt;-->
+
+<!--    &lt;!&ndash; Icon &ndash;&gt;-->
+<!--    <div class="fadeIn first">-->
+<!--      <img src="https://danielzawadzki.com/codepen/01/icon.svg" id="icon" alt="User Icon" />-->
+<!--    </div>-->
+
+<!--    &lt;!&ndash; Login Form &ndash;&gt;-->
+<!--    <form #formLogin="ngForm">-->
+<!--      <input type="text" id="email" ngModel class="form-control" name="email" placeholder="email">-->
+<!--      <input type="password" id="password" ngModel class="form-control" name="password" placeholder="password">-->
+<!--      <input type="submit" (click)="login(formLogin)" class="fadeIn fourth" value="Log In">-->
+<!--    </form>-->
+
+<!--    &lt;!&ndash; Remind Passowrd &ndash;&gt;-->
+<!--    <div id="formFooter">-->
+<!--      <a class="underlineHover" href="#">Forgot Password?</a>-->
+<!--    </div>-->
+
+<!--  </div>-->
+<!--</div>-->
+<div class="row">
+  <div class="col-md-4 my-5 offset-4">
+
+    <div class="card alert-secondary">
+
+      <form method="post" #formLogin="ngForm">
+        <div class="card-body text-center">
+
+          <img src="assets/image/user.png" width="50%" class="logo"  alt="icone"/>
+          <h3 class="card-title">Se connexion</h3>
+          <p class="slogan">pour acceder aux fonctionnalités</p>
+          <p class="slogan alert alert-danger">Login ou mot de passe invalide!</p>
+          <div class="form-group">
+            <input
+              type="email"
+              #email="ngModel"
+             id="username"
+             name="username"
+             class="form-control"
+             placeholder="Entrer votre email"
+             ngModel
+              email
+             required
+            >
+<!--            <p><small class="text-danger" *ngIf="email.invalid && email.touched">verifier votre email</small></p>-->
+            <label for="username">Email</label>
+          </div>
+
+          <div class="form-group">
+            <input type="password"
+                   id="password"
+                   name="password"
+                   class="form-control"
+                   placeholder="entrer votre mot de passe"
+                   ngModel
+                   required
+            >
+
+            <label for="password">Password</label>
+          </div>
+
+          <div class="card-foter text-right">
+            <button type="submit" [disabled]="formLogin.invalid" (click)="login()" class="btn btn-primary btn-sm" style="width: 140px;">Connexion</button>
+          </div>
+
+        </div>
+      </form>
+
+    </div>
+
+  </div>
+</div>

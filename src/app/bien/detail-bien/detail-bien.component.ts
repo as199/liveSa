@@ -11,20 +11,23 @@ import { Bien } from '../list-bien/bien.model';
 export class DetailBienComponent implements OnInit, OnDestroy {
   donnees: Bien |any;
   constructor(private activatedRoute: ActivatedRoute, private serviceBien: BienService ) {
-    console.log('je suis le constructeur');
   }
 
   ngOnInit(): void {
-    console.log('je suis le oninit');
-    let id = this.activatedRoute.snapshot.params.id;
-    this.donnees = this.serviceBien.getBienById(+id);
-    // for next request that this component is loading
-    this.activatedRoute.params.subscribe(
-      (params: Params) => {
-       id = params.id;
-       this.donnees = this.serviceBien.getBienById(+id);
+    this.activatedRoute.data.subscribe(
+      (data) =>{
+        this.donnees = data['bien'];
       }
     );
+    // let id = this.activatedRoute.snapshot.params.id;
+    // this.donnees = this.serviceBien.getBienById(+id);
+    // // for next request that this component is loading
+    // this.activatedRoute.params.subscribe(
+    //   (params: Params) => {
+    //    id = params.id;
+    //    this.donnees = this.serviceBien.getBienById(+id);
+    //   }
+    // );
   }
 
   ngOnDestroy(): void {
